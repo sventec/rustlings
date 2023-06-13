@@ -5,6 +5,7 @@ watch:
 
 setup:
 	rustup update
+	cargo install --force --path .
 	rustlings lsp
 	rustup component add rust-src  # required by rust-analyzer
 
