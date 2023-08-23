@@ -5,8 +5,6 @@
 // Execute `rustlings hint enums3` or use the `hint` watch subcommand for a
 // hint.
 
-// I AM NOT DONE
-
 enum Message {
     // TODO: implement the message variant types based on their usage below
     ChangeColor(i32, i32, i32),
@@ -51,8 +49,10 @@ impl State {
         // extra parentheses: fn function((t, u, p, l, e))
         match message {
             Message::Quit => self.quit(),
-            None => expr,
-            // ...
+            Message::ChangeColor(r, g, b) => self.change_color((r as u8, g as u8, b as u8)),
+            Message::Echo(msg) => self.echo(msg),
+            Message::Move(point) => self.move_position(point),
+            _ => panic!("Unexpected message!"),
         }
     }
 }
